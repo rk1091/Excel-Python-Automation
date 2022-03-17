@@ -173,17 +173,17 @@ def adddata():
 try:
     c=[]
     for file in glob.glob('*.xlsx'):
-        
-        wb=openpyxl.load_workbook(file)
-        worksheet= wb["Sheet1"]
-        b=adddata()
-        c=c+b 
+        if (file!='OUTPUT SHEET.xlsx'):
+            wb=openpyxl.load_workbook(file)
+            worksheet= wb["Sheet1"]
+            b=adddata()
+            c=c+b 
     
-    w=openpyxl.load_workbook('G:/rish project/OUTPUT SHEET.xlsx')
+    w=openpyxl.load_workbook('OUTPUT SHEET.xlsx')
     worksheet2= w["Sheet1"]
     for x in c:
         worksheet2.append(x)
-    w.save('G:/rish project/OUTPUT SHEET.xlsx')
+    w.save('OUTPUT SHEET.xlsx')
     w.close()
     wb.close()
 
@@ -195,7 +195,7 @@ except TypeError:
     print('Please make sure that the input excel files have data according to the correct format (i.e apart from name, input only numbers elsewhere).')
 
 except NameError:
-   print('Please make sure that the input excel files are in the same folder as this python script file and the output excel file IS NOT present in this folder.')
+   print('Please make sure that the input excel files are in the same folder as this python script file and no extra output excel files ARE present in this folder.')
 
 except:
    print('Please close the outfile file.')
