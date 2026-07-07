@@ -1,2 +1,2 @@
 # Excel-Python-Automation
- This was a paid project for which I made a python script to automate excel files
+Python scripts to automate Excel data pipelines — actively used by Texas University students
